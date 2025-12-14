@@ -5,11 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ZenSite | Demos</title>
 
-<meta name="description" content="Ejemplos reales de diseño web profesional creados por ZenSite.">
-
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
 body{
   font-family:Segoe UI,Arial,sans-serif;
   background:#000;
@@ -17,13 +14,13 @@ body{
   overflow-x:hidden;
 }
 
-/* BACKGROUND DESKTOP */
+/* FONDO */
 @media(min-width:769px){
   body::before{
     content:"";
     position:fixed;
     inset:0;
-    background:url('background.png') center/cover no-repeat;
+    background:url('background.jpg') center/cover no-repeat;
     z-index:-2;
   }
 }
@@ -31,7 +28,7 @@ body::after{
   content:"";
   position:fixed;
   inset:0;
-  background:linear-gradient(180deg,rgba(0,0,0,.6),rgba(0,0,0,.9));
+  background:linear-gradient(180deg,rgba(0,0,0,.65),rgba(0,0,0,.95));
   z-index:-1;
 }
 
@@ -40,9 +37,7 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:18px 30px;
-  position:relative;
-  z-index:10;
+  padding:20px 28px;
 }
 nav a{
   color:#fff;
@@ -53,137 +48,100 @@ nav a{
 }
 nav a:hover{opacity:1}
 
-/* TRANSLATOR */
-#google_translate_element{
-  position:fixed;
-  top:15px;
-  right:15px;
-  z-index:9999;
-}
-.goog-logo-link,
-.goog-te-gadget span{display:none!important}
-.goog-te-gadget{color:transparent!important}
-.goog-te-combo{
-  background:#000;
-  color:#00cfff;
-  border:1px solid #00cfff;
-  padding:6px 10px;
-  border-radius:6px;
-  font-weight:700;
-}
-
 /* MAIN */
 main{
-  padding:120px 20px 80px;
+  padding:110px 20px 80px;
   max-width:1200px;
   margin:auto;
   text-align:center;
 }
+
 h1{
   font-size:clamp(36px,6vw,64px);
-  margin-bottom:20px;
+  margin-bottom:12px;
 }
-p{
-  max-width:820px;
-  margin:0 auto 30px;
-  font-size:19px;
-  line-height:1.6;
-  opacity:.9;
+.subtitle{
+  opacity:.85;
+  font-size:18px;
+  margin-bottom:50px;
 }
 
-/* DEMO CAROUSEL */
-.demo-wrapper{
+/* SLIDER */
+.slider-wrap{
   position:relative;
-  max-width:100%;
-  margin-top:40px;
 }
-.demo-carousel{
+
+.slider{
   display:flex;
-  gap:20px;
+  gap:24px;
   overflow-x:auto;
+  scroll-snap-type:x mandatory;
   scroll-behavior:smooth;
-  padding:10px 0 30px;
+  padding-bottom:20px;
 }
-.demo-carousel::-webkit-scrollbar{display:none}
+.slider::-webkit-scrollbar{display:none}
 
 .demo{
-  flex:0 0 auto;
-  width:300px;
-  background:rgba(255,255,255,.06);
-  border-radius:22px;
-  overflow:hidden;
-  transition:.3s;
+  min-width:90%;
+  max-width:90%;
+  background:rgba(255,255,255,.05);
+  border-radius:26px;
+  scroll-snap-align:center;
+  padding:14px;
 }
-.demo:hover{
-  transform:translateY(-8px);
-  box-shadow:0 0 30px rgba(0,200,255,.4);
+@media(min-width:768px){
+  .demo{
+    min-width:520px;
+    max-width:520px;
+  }
 }
 .demo img{
   width:100%;
+  border-radius:18px;
   display:block;
 }
 
-/* ARROWS */
+/* FLECHAS */
 .arrow{
   position:absolute;
   top:50%;
   transform:translateY(-50%);
-  width:46px;
-  height:46px;
+  width:52px;
+  height:52px;
   border-radius:50%;
-  background:rgba(0,0,0,.75);
-  border:1px solid rgba(0,200,255,.6);
+  border:1px solid #00cfff;
+  background:rgba(0,0,0,.6);
   color:#00cfff;
   font-size:26px;
   cursor:pointer;
   display:flex;
   align-items:center;
   justify-content:center;
-  z-index:20;
+  z-index:10;
 }
-.arrow.left{left:5px}
-.arrow.right{right:5px}
+.arrow.left{left:-10px}
+.arrow.right{right:-10px}
 
-/* MOBILE FIX */
-@media(max-width:768px){
-  .demo{
-    width:85%;
-  }
-}
-
-/* REVIEWS */
-.reviews-section{
-  margin-top:120px;
-}
-.reviews-section h2{
-  font-size:34px;
-  margin-bottom:40px;
-}
-.reviews-slider{
-  position:relative;
-  max-width:820px;
-  margin:auto;
-  height:170px;
+/* RESEÑAS */
+.reviews{
+  margin-top:100px;
+  display:grid;
+  gap:26px;
+  max-width:900px;
+  margin-left:auto;
+  margin-right:auto;
 }
 .review{
-  position:absolute;
-  inset:0;
   background:rgba(255,255,255,.06);
-  padding:36px;
-  border-radius:26px;
-  opacity:0;
-  transform:translateX(40px);
-  transition:.6s;
-  font-size:18px;
-}
-.review.active{
-  opacity:1;
-  transform:translateX(0);
+  padding:30px;
+  border-radius:22px;
+  text-align:left;
 }
 .review span{
   display:block;
-  margin-top:14px;
+  margin-top:12px;
   font-weight:700;
+  opacity:.9;
 }
 
 /* WHATSAPP */
@@ -208,8 +166,6 @@ p{
 
 <body>
 
-<div id="google_translate_element"></div>
-
 <header>
   <strong>ZenSite</strong>
   <nav>
@@ -223,36 +179,54 @@ p{
 <main>
 
 <h1>Trabajos y demostraciones</h1>
-<p>Desliza con el dedo o usa las flechas para ver todos los demos.</p>
+<p class="subtitle">
+Desliza con el dedo o usa las flechas para ver todos los demos.
+</p>
 
-<!-- DEMOS -->
-<div class="demo-wrapper">
-  <div class="arrow left" onclick="scrollDemos(-1)">‹</div>
-  <div class="arrow right" onclick="scrollDemos(1)">›</div>
+<div class="slider-wrap">
+  <button class="arrow left" onclick="slide(-1)">‹</button>
+  <button class="arrow right" onclick="slide(1)">›</button>
 
-  <div class="demo-carousel" id="demoCarousel">
-    <div class="demo"><img src="demo1.png" alt="Demo 1"></div>
-    <div class="demo"><img src="demo2.png" alt="Demo 2"></div>
-    <div class="demo"><img src="demo3.png" alt="Demo 3"></div>
-    <div class="demo"><img src="demo4.png" alt="Demo 4"></div>
-    <div class="demo"><img src="demo5.png" alt="Demo 5"></div>
-    <div class="demo"><img src="demo6.png" alt="Demo 6"></div>
-    <div class="demo"><img src="demo7.png" alt="Demo 7"></div>
-    <div class="demo"><img src="demo8.png" alt="Demo 8"></div>
+  <div class="slider" id="slider">
+    <div class="demo"><img src="demo1.jpg" alt="Demo 1"></div>
+    <div class="demo"><img src="demo2.jpg" alt="Demo 2"></div>
+    <div class="demo"><img src="demo3.jpg" alt="Demo 3"></div>
+    <div class="demo"><img src="demo4.jpg" alt="Demo 4"></div>
+    <div class="demo"><img src="demo5.jpg" alt="Demo 5"></div>
+    <div class="demo"><img src="demo6.jpg" alt="Demo 6"></div>
+    <div class="demo"><img src="demo7.jpg" alt="Demo 7"></div>
+    <div class="demo"><img src="demo8.jpg" alt="Demo 8"></div>
   </div>
 </div>
 
-<!-- REVIEWS -->
-<section class="reviews-section">
-  <h2>Lo que dicen nuestros clientes</h2>
-  <div class="reviews-slider">
-    <div class="review active">⭐⭐⭐⭐⭐ Web seria y profesional<span>— Carlos M.</span></div>
-    <div class="review">⭐⭐⭐⭐⭐ Se siente hecha a medida<span>— Andrea R.</span></div>
-    <div class="review">⭐⭐⭐⭐⭐ Perfecta en el celular<span>— Luis G.</span></div>
-    <div class="review">⭐⭐⭐⭐⭐ Da confianza desde el inicio<span>— Miguel T.</span></div>
-    <div class="review">⭐⭐⭐⭐⭐ Muy claros y rápidos<span>— Daniela P.</span></div>
-    <div class="review">⭐⭐⭐⭐⭐ Justo lo que buscaba<span>— Roberto S.</span></div>
-    <div class="review">⭐⭐⭐⭐⭐ 100% recomendados<span>— José A.</span></div>
+<section class="reviews">
+  <div class="review">
+    ⭐⭐⭐⭐⭐ “La web se ve seria y profesional. Ahora sí confían en mi negocio.”
+    <span>— Carlos M.</span>
+  </div>
+  <div class="review">
+    ⭐⭐⭐⭐⭐ “Todo quedó claro desde el principio, sin vueltas.”
+    <span>— Andrea R.</span>
+  </div>
+  <div class="review">
+    ⭐⭐⭐⭐⭐ “En el teléfono se ve perfecta, eso era clave para mí.”
+    <span>— Luis G.</span>
+  </div>
+  <div class="review">
+    ⭐⭐⭐⭐⭐ “No parece plantilla, parece hecha a medida.”
+    <span>— Miguel T.</span>
+  </div>
+  <div class="review">
+    ⭐⭐⭐⭐⭐ “La imagen del negocio cambió completamente.”
+    <span>— Daniela P.</span>
+  </div>
+  <div class="review">
+    ⭐⭐⭐⭐⭐ “Rápidos, claros y con buen gusto.”
+    <span>— Roberto S.</span>
+  </div>
+  <div class="review">
+    ⭐⭐⭐⭐⭐ “Desde que tengo la web, me escriben más.”
+    <span>— José A.</span>
   </div>
 </section>
 
@@ -260,35 +234,12 @@ p{
 
 <a class="whatsapp" href="https://wa.me/15027942412" target="_blank">💬</a>
 
-<!-- DEMO SCROLL -->
 <script>
-function scrollDemos(dir){
-  const c = document.getElementById('demoCarousel');
-  c.scrollBy({ left: dir * 320, behavior: 'smooth' });
+const slider=document.getElementById("slider");
+function slide(dir){
+  slider.scrollBy({left:dir*slider.clientWidth,behavior:'smooth'});
 }
 </script>
-
-<!-- REVIEWS SLIDE -->
-<script>
-const reviews = document.querySelectorAll('.review');
-let r = 0;
-setInterval(()=>{
-  reviews[r].classList.remove('active');
-  r = (r + 1) % reviews.length;
-  reviews[r].classList.add('active');
-}, 4000);
-</script>
-
-<!-- TRANSLATE -->
-<script>
-function googleTranslateElementInit(){
-  new google.translate.TranslateElement({
-    pageLanguage:'es',
-    includedLanguages:'es,en'
-  }, 'google_translate_element');
-}
-</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
