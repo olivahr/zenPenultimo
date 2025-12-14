@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZenSite | Nosotros</title>
+
+<meta name="description" content="Conoce quiénes somos en ZenSite. Diseño web profesional, beneficios claros y garantías reales.">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:Segoe UI,Arial,sans-serif;
+  background:#000;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* BACKGROUND */
+@media(min-width:769px){
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:url('background.png') center/cover no-repeat;
+    z-index:-2;
+  }
+}
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.6),rgba(0,0,0,.95));
+  z-index:-1;
+}
+
+/* HEADER */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 30px;
+  position:relative;
+  z-index:10;
+}
+nav a{
+  color:#fff;
+  text-decoration:none;
+  margin-left:20px;
+  font-weight:600;
+  opacity:.85;
+}
+nav a:hover{opacity:1}
+
+/* TRANSLATOR */
+#google_translate_element{
+  position:fixed;
+  top:15px;
+  right:15px;
+  z-index:9999;
+}
+.goog-logo-link,.goog-te-gadget span{display:none!important}
+.goog-te-gadget{color:transparent!important}
+.goog-te-combo{
+  background:#000;
+  color:#00cfff;
+  border:1px solid #00cfff;
+  padding:6px 10px;
+  border-radius:6px;
+  font-weight:700;
+}
+
+/* MAIN */
+main{
+  padding:120px 20px 100px;
+  max-width:1100px;
+  margin:auto;
+  text-align:center;
+}
+h1{
+  font-size:clamp(36px,6vw,64px);
+  margin-bottom:20px;
+}
+.intro{
+  max-width:820px;
+  margin:0 auto 90px;
+  font-size:20px;
+  line-height:1.7;
+  opacity:.95;
+}
+
+/* SECTIONS */
+.section{
+  margin-bottom:90px;
+}
+.section h2{
+  font-size:34px;
+  margin-bottom:30px;
+}
+
+/* CARDS */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:28px;
+}
+.card{
+  background:rgba(255,255,255,.06);
+  padding:34px;
+  border-radius:24px;
+  backdrop-filter:blur(12px);
+  transition:.4s;
+}
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 30px rgba(0,200,255,.45);
+}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  bottom:22px;
+  right:22px;
+  width:60px;
+  height:60px;
+  background:#25D366;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:30px;
+  color:#fff;
+  text-decoration:none;
+  z-index:3000;
+}
+</style>
+</head>
+
+<body>
+
+<div id="google_translate_element"></div>
+
+<header>
+  <strong>ZenSite</strong>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="demo.html">Demos</a>
+    <a href="planes.html">Planes</a>
+    <a href="nosotros.html">Nosotros</a>
+  </nav>
+</header>
+
+<main>
+
+<h1>Quiénes somos</h1>
+<p class="intro">
+En ZenSite creamos webs profesionales pensadas para transmitir confianza,
+seriedad y valor desde el primer segundo.  
+No trabajamos con plantillas genéricas: diseñamos experiencias claras,
+modernas y enfocadas en conversión.
+</p>
+
+<section class="section">
+<h2>Beneficios de trabajar con ZenSite</h2>
+<div class="cards">
+  <div class="card">🚀 Diseño enfocado en resultados reales</div>
+  <div class="card">📱 Experiencia perfecta en móvil y desktop</div>
+  <div class="card">💎 Imagen de marca premium y profesional</div>
+  <div class="card">⚡ Proceso claro, directo y sin vueltas</div>
+</div>
+</section>
+
+<section class="section">
+<h2>Nuestras garantías</h2>
+<div class="cards">
+  <div class="card">✔ La web es 100% tuya</div>
+  <div class="card">✔ Ajustes incluidos hasta quedar conforme</div>
+  <div class="card">✔ Optimización de velocidad y estructura</div>
+  <div class="card">✔ Soporte después de la entrega</div>
+</div>
+</section>
+
+</main>
+
+<a class="whatsapp" href="https://wa.me/15027942412" target="_blank">💬</a>
+
+<script>
+function googleTranslateElementInit(){
+  new google.translate.TranslateElement({
+    pageLanguage:'es',
+    includedLanguages:'es,en'
+  }, 'google_translate_element');
+}
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>

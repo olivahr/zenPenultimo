@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZenSite | Webs que venden</title>
+
+<meta name="description" content="ZenSite diseña webs profesionales que generan confianza y convierten visitas en clientes reales.">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:Segoe UI,Arial,sans-serif;
+  background:#000;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* BACKGROUND DESKTOP */
+@media(min-width:769px){
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:url('background.png') center/cover no-repeat;
+    z-index:-2;
+  }
+}
+
+/* OVERLAY */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.9));
+  z-index:-1;
+}
+
+/* HEADER */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 30px;
+  position:relative;
+  z-index:10;
+}
+nav a{
+  color:#fff;
+  text-decoration:none;
+  margin-left:20px;
+  font-weight:600;
+  opacity:.85;
+}
+nav a:hover{opacity:1}
+
+/* TRANSLATOR */
+#google_translate_element{
+  position:fixed;
+  top:15px;
+  right:15px;
+  z-index:9999;
+}
+.goog-logo-link,
+.goog-te-gadget span{display:none!important}
+.goog-te-gadget{color:transparent!important}
+.goog-te-combo{
+  background:#000;
+  color:#00cfff;
+  border:1px solid #00cfff;
+  padding:6px 10px;
+  border-radius:6px;
+  font-weight:700;
+}
+
+/* HERO */
+.hero{
+  min-height:85vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:40px 20px;
+}
+.hero h1{
+  font-size:clamp(48px,7vw,92px);
+  text-shadow:0 0 35px rgba(0,200,255,.6);
+}
+.hero p{
+  max-width:820px;
+  margin:26px auto 0;
+  font-size:21px;
+  line-height:1.6;
+  opacity:.95;
+}
+
+/* MOBILE LAPTOP IMAGE */
+.mobile-laptop{
+  display:none;
+  text-align:center;
+  padding:20px;
+}
+.mobile-laptop img{
+  width:100%;
+  max-width:420px;
+  border-radius:20px;
+  box-shadow:0 30px 60px rgba(0,0,0,.8);
+}
+@media(max-width:768px){
+  .mobile-laptop{
+    display:block;
+  }
+}
+
+/* HOME SECTION */
+.section{
+  max-width:1100px;
+  margin:auto;
+  padding:100px 20px;
+}
+.section h2{
+  font-size:36px;
+  margin-bottom:40px;
+}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:28px;
+}
+.card{
+  background:rgba(255,255,255,.06);
+  padding:32px;
+  border-radius:22px;
+  backdrop-filter:blur(10px);
+}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  bottom:22px;
+  right:22px;
+  width:60px;
+  height:60px;
+  background:#25D366;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:30px;
+  color:#fff;
+  text-decoration:none;
+  z-index:3000;
+}
+</style>
+</head>
+
+<body>
+
+<div id="google_translate_element"></div>
+
+<header>
+  <strong>ZenSite</strong>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="demo.html">Demos</a>
+    <a href="planes.html">Planes</a>
+    <a href="nosotros.html">Nosotros</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>ZenSite</h1>
+    <p>
+      Diseñamos experiencias web profesionales enfocadas en generar confianza
+      y convertir visitas en clientes reales.
+    </p>
+  </div>
+</section>
+
+<!-- LAPTOP VISIBLE EN MOBILE -->
+<div class="mobile-laptop">
+  <img src="background.png" alt="ZenSite Web">
+</div>
+
+<section class="section">
+  <h2>Webs diseñadas para verse grandes</h2>
+  <div class="cards">
+    <div class="card">🌐 Presencia digital sólida desde el primer segundo</div>
+    <div class="card">🧠 Estructuras claras que guían al visitante</div>
+    <div class="card">📱 Experiencia perfecta en móvil y escritorio</div>
+  </div>
+</section>
+
+<a class="whatsapp" href="https://wa.me/15027942412" target="_blank">💬</a>
+
+<!-- TRANSLATE -->
+<script>
+function googleTranslateElementInit(){
+  new google.translate.TranslateElement({
+    pageLanguage:'es',
+    includedLanguages:'es,en'
+  }, 'google_translate_element');
+}
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
